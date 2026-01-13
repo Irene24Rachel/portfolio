@@ -1,8 +1,6 @@
 const navLinks = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("section");
 const navbar = document.querySelector(".navbar");
-
-/* Smooth Scroll */
 navLinks.forEach(link => {
     link.addEventListener("click", e => {
         e.preventDefault();
@@ -14,8 +12,6 @@ navLinks.forEach(link => {
         });
     });
 });
-
-/* Active Nav */
 window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
@@ -31,8 +27,6 @@ window.addEventListener("scroll", () => {
         }
     });
 });
-
-/* Scroll Reveal */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -46,8 +40,6 @@ document.querySelectorAll(".section").forEach(el => {
     el.classList.add("hidden");
     observer.observe(el);
 });
-
-/* Projects with Images */
 const projects = [
     {
         title: "Calculator App",
@@ -85,3 +77,4 @@ projects.forEach(project => {
     projectGrid.appendChild(card);
     observer.observe(card);
 });
+
